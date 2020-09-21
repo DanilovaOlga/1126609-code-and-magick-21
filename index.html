@@ -187,10 +187,7 @@
     return 1.337 * wizardWidth
   };
   var getFireballSpeed = function (isMovingLeft) {
-    if (isMovingLeft) {
-      return 2;
-    }
-    return 5;
+    return isMovingLeft ? 2 : 5
   };
   var getWizardX = function (gameFieldWidth) {
     return (gameFieldWidth - wizardWidth) / 2
