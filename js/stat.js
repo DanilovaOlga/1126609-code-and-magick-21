@@ -12,29 +12,29 @@ const CLOUD_GAP = 10;
 
 const FONT_GAP = 19;
 
-const renderCloud = function(ctx, x, y, color) {
+const renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
-  ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT)
+  ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-const renderText = function(ctx, text, textX, textY) {
-  ctx.font = "16px 'PT Mono'";
+const renderText = function (ctx, text, textX, textY) {
+  ctx.font = "16px PT Mono";
   ctx.textBaseline = "hanging";
   ctx.fillStyle = "#000000";
   ctx.fillText(text, textX, textY);
 };
 
-const getMaxNumber = function(array) {
+const getMaxNumber = function (array) {
   let maxNumber = array[0];
   for (let i = 1; i < array.length; i++) {
     if (array[i] > maxNumber) {
       maxNumber = array[i];
     }
   }
-  return maxNumber
+  return maxNumber;
 };
 
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + CLOUD_GAP, CLOUD_Y + CLOUD_GAP, "rgba(0, 0, 0, 0.7)");
   renderCloud(ctx, CLOUD_X, CLOUD_Y, "#ffffff");
   renderText(ctx, "Ура, вы победили!", CLOUD_X + CLOUD_GAP * 2, CLOUD_GAP * 3);
@@ -51,8 +51,7 @@ window.renderStatistics = function(ctx, names, times) {
     ctx.fillText(Math.round(times[i]), scaleIndent, CLOUD_GAP * 3 + FONT_GAP * 2 + scaleHeightDifference);
     if (names[i] === "Вы") {
       ctx.fillStyle = "rgba(255, 0, 0, 1)";
-    }
-    else {
+    } else {
       let randomPercent = Math.round(Math.random() * 100) + "%";
       ctx.fillStyle = "hsl(209," + randomPercent + ", 29%)";
     }
