@@ -24,7 +24,7 @@ const createWizard = function () {
     name: getRandomItem(NAMES) + " " + getRandomItem(SURNAMES),
     coat: getRandomItem(COAT_COLORS),
     eyes: getRandomItem(EYES_COLORS),
-  }
+  };
 };
 
 const similarWizards = [];
